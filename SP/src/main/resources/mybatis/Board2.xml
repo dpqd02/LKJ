@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lkj.spring3.model.Board2">
+	<resultMap type="Board2" id="boardResult">
+		<result property="seq" column="SEQ"/>
+		<result property="writer" column="WRITER"/>
+		<result property="email" column="EMAIL"/>
+		<result property="subject" column="SUBJECT"/>
+		<result property="content" column="CONTENT"/>
+		<result property="rdate" column="RDATE"/>
+	</resultMap>
+	
+	<select id="selectPerPage" resultType="Board2" parameterType="map">
+		<![CDATA[
+		select * from
+		(select ROWNUM rnum,aa.* from (select * from BOARD order by SEQ desc) aa)
+		where rnum>#{startRow} and rnum<=#{endRow}
+		]]>
+	</select>
+	<select id="selectCount" resultType="long">
+		select count(SEQ) from BOARD
+	</select>
+	<select id="selectBySeq" resultType="Board2" parameterType="long">
+		select * from BOARD where SEQ=#{seq}
+	</select>
+	<!-- 
+	<select id="selectByName" resultType="Board">
+	</select>
+	<select id="selectBySubject" resultType="Board">
+	</select>
+	-->
+	
+	<insert id="insert"  parameterType="Board2">
+		insert into BOARD values(BOARD_SEQ.nextval,#{writer},#{email},#{subject},#{content},SYSDATE)
+	</insert>
+	
+	<delete id="delete" parameterType="long">
+	 	delete from BOARD where SEQ=#{seq} 
+	</delete>
+	
+	<update id="update" parameterType="Board2">
+		update BOARD 
+		set WRITER=#{writer}, EMAIL=#{email}, SUBJECT=#{subject}, CONTENT=#{content}, RDATE=SYSDATE
+		where SEQ=#{seq}
+	</update>
+	
+</mapper>

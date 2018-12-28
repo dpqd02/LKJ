@@ -1,0 +1,56 @@
+<html>
+<head>
+<title> GuestBook Edit with Spring MVC </title>
+<meta charset="utf-8">
+</head>
+<body>
+<center>
+<font color='gray' size='8' face='휴먼편지체'>
+<hr width='600' size='2' color='gray' noshade>
+<h5> GuestBook Edit with Spring</h5>
+</font>
+<font color='gray' size='3' face='휴먼편지체'>
+<a href='list'>목록</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='writeForm'>글쓰기</a><br/>
+</font>
+<hr width='600' size='2' color='gray' noshade>
+</center>
+
+<form name='input' method='post' action='update'>
+<input type="hidden" name="idx" value="6">
+<table border='0' width='600' align='center' cellpadding='3' cellspacing='1' bordercolor='gray'>	
+<tr>
+   <td width='20%' align='center' >NAME</td>
+   <td>
+      <input name='name' readonly value='가'/>
+   </td>
+</tr>
+
+<tr>
+	<td align='center'>EMAIL</td>
+	<td><input name='email' value="나"/></td>
+</tr>
+
+<tr>
+	<td align='center'>SUBJECT</td>
+	<td><input name='subject' value="다"/></td>
+</tr>
+			
+<tr>
+	<td align='center'>CONTENT</td>
+	<td><textarea  name='content' rows='15' cols='70'>라</textarea></td>
+</tr>
+<tr>
+	 <td colspan='2' align='center'>
+		<input type='submit' value='수정'>
+		<input type='reset' value='다시입력'>
+	 </td>
+</tr>
+
+</table>
+<hr width="600" size="2" color="gray" noshade>
+</form>
+</body>
+</html>
+

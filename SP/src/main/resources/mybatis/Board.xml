@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lkj.spring3.model.Board">
+	<resultMap type="Board" id="boardResult">
+		<result property="seq" column="SEQ"/>
+		<result property="writer" column="WRITER"/>
+		<result property="email" column="EMAIL"/>
+		<result property="subject" column="SUBJECT"/>
+		<result property="content" column="CONTENT"/>
+		<result property="rdate" column="RDATE"/>
+	</resultMap>
+	
+	<select id="list" resultType="Board">
+		select * from BOARD order by SEQ desc
+	</select>
+	<select id="content" resultType="Board" parameterType="long">
+		select * from BOARD where SEQ=#{seq}
+	</select>
+	<insert id="insert"  parameterType="Board">
+		insert into BOARD values(BOARD_SEQ.nextval,#{writer},#{email},#{subject},#{content},SYSDATE)
+	</insert>
+	<delete id="delete" parameterType="long">
+		delete from Board where SEQ=#{seq}
+	</delete>
+	<update id="update" parameterType="Board">
+		update Board set WRITER=#{writer}, SUBJECT=#{subject} , content=#{content} where SEQ=#{seq}  
+	</update>
+</mapper>

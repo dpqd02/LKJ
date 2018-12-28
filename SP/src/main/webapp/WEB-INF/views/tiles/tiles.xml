@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>  
+  
+   <!-- base-definition -->
+   <definition name="base-definition"
+       template="/WEB-INF/views/tiles/layouts/defaultLayout.jsp">  
+       <put-attribute name="title" value="" />  
+       <put-attribute name="header" value="/WEB-INF/views/tiles/template/defaultHeader.jsp" />  
+       <put-attribute name="menu" value="/WEB-INF/views/tiles/template/defaultMenu.jsp" />  
+       <put-attribute name="body" value="" />  
+       <put-attribute name="footer" value="/WEB-INF/views/tiles/template/defaultFooter.jsp" />  
+   </definition>  
+  
+   <!-- Home Page -->
+   <definition name="index2" extends="base-definition">  
+       <put-attribute name="body" value="/WEB-INF/views/index2.jsp" />  
+   </definition>  
+ 	
+ 	
+   <!-- BoarList Page -->
+   <definition name="boardList" extends="base-definition">  
+       <put-attribute name="title" value="List" />  
+       <put-attribute name="body" value="/WEB-INF/views/boardList.jsp" />  
+   </definition>  
+       
+   <!-- BoardView Page -->
+   <definition name="boardContent" extends="base-definition">  
+       <put-attribute name="title" value="View" />  
+       <put-attribute name="body" value="/WEB-INF/views/boardContent.jsp" />  
+   </definition>
+   
+   <!-- address Page -->
+   <definition name="addr/list" extends="base-definition">  
+       <put-attribute name="title" value="List" />  
+       <put-attribute name="body" value="/WEB-INF/views/addr/list.jsp" />  
+   </definition>  
+         
+   <definition name="addr/input" extends="base-definition">  
+       <put-attribute name="title" value="input" />  
+       <put-attribute name="body" value="/WEB-INF/views/addr/input.jsp" />  
+   </definition>
+   
+   <!-- address Page2 -->
+   <definition name="addr2/list" extends="base-definition">  
+       <put-attribute name="title" value="List" />  
+       <put-attribute name="body" value="/WEB-INF/views/addr2/list.jsp" />  
+   </definition>  
+         
+   <definition name="addr2/input" extends="base-definition">  
+       <put-attribute name="title" value="input" />  
+       <put-attribute name="body" value="/WEB-INF/views/addr2/input.jsp" />  
+   </definition>        
+ 	
+ 	  <!-- board Page -->
+   <definition name="board/list" extends="base-definition">  
+       <put-attribute name="title" value="List" />  
+       <put-attribute name="body" value="/WEB-INF/views/board/list.jsp" />  
+   </definition>  
+         
+   <definition name="board/write" extends="base-definition">  
+       <put-attribute name="title" value="input" />  
+       <put-attribute name="body" value="/WEB-INF/views/board/write.jsp" />  
+   </definition>     
+ 	
+ 	<definition name="board/update" extends="base-definition">  
+       <put-attribute name="title" value="input" />  
+       <put-attribute name="body" value="/WEB-INF/views/board/update.jsp" />  
+   </definition>
+   
+   <definition name="board/content" extends="base-definition">  
+       <put-attribute name="title" value="input" />  
+       <put-attribute name="body" value="/WEB-INF/views/board/content.jsp" />  
+   </definition>
+  
+ 	
+   <!-- board Page2 -->
+   <definition name="board2/list" extends="base-definition">  
+       <put-attribute name="title" value="List" />  
+       <put-attribute name="body" value="/WEB-INF/views/board2/list.jsp" />  
+   </definition>  
+         
+   <definition name="board2/write" extends="base-definition">  
+       <put-attribute name="title" value="input" />  
+       <put-attribute name="body" value="/WEB-INF/views/board2/write.jsp" />  
+   </definition>     
+ 	
+ 	<definition name="board2/edit" extends="base-definition">  
+       <put-attribute name="title" value="input" />  
+       <put-attribute name="body" value="/WEB-INF/views/board2/edit.jsp" />  
+   </definition>
+   
+   <definition name="board2/content" extends="base-definition">  
+       <put-attribute name="title" value="input" />  
+       <put-attribute name="body" value="/WEB-INF/views/board/content.jsp" />  
+   </definition>
+ 	
+ 	<!-- board Page2 -->
+   <definition name="file/list" extends="base-definition">  
+       <put-attribute name="title" value="List" />  
+       <put-attribute name="body" value="/WEB-INF/views/file/list.jsp" />  
+   </definition>  
+         
+   <definition name="file/write" extends="base-definition">  
+       <put-attribute name="title" value="input" />  
+       <put-attribute name="body" value="/WEB-INF/views/file/write.jsp" />  
+   </definition>
+   
+   <definition name="drag_drop/write_dd" extends="base-definition">  
+       <put-attribute name="title" value="drag_drop" />  
+       <put-attribute name="body" value="/WEB-INF/views/drag_drop/write_dd.jsp" />  
+   </definition>          
+ 	
+ 	<definition name="paging/list" extends="base-definition">  
+       <put-attribute name="title" value="List" />  
+       <put-attribute name="body" value="/WEB-INF/views/paging/list.jsp" />  
+   </definition> 
+   
+   <definition name="ajax/test01" extends="base-definition">  
+       <put-attribute name="title" value="test01" />  
+       <put-attribute name="body" value="/WEB-INF/views/ajax/test01.jsp" />  
+   </definition>
+   
+   <definition name="ajax/test02" extends="base-definition">  
+       <put-attribute name="title" value="test02" />  
+       <put-attribute name="body" value="/WEB-INF/views/ajax/test02.jsp" />  
+   </definition>
+   
+   <definition name="ajax/test03" extends="base-definition">  
+       <put-attribute name="title" value="test03" />  
+       <put-attribute name="body" value="/WEB-INF/views/ajax/test03.jsp" />  
+   </definition>
+ 	
+</tiles-definitions>

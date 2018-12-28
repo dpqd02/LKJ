@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+   <typeAliases>
+   		<typeAlias alias="Address" type="lkj.spring3.model.Address"/>
+   		<typeAlias alias="Board" type="lkj.spring3.model.Board"/>
+   		<typeAlias alias="Board2" type="lkj.spring3.model.Board2"/>
+   		<typeAlias alias="Paging" type="lkj.spring3.model.Paging"/>
+   		<typeAlias alias="Slang" type="lkj.spring3.model.Slang_Board"/>
+   		<typeAlias alias="PagingVo" type="lkj.spring3.page.vo.PagingVo"/>
+   		<!-- append -->
+   	</typeAliases>
+   	<mappers>
+   		<mapper resource="mybatis/Address.xml"/>
+   		<mapper resource="mybatis/Address2.xml"/>
+   		<mapper resource="mybatis/Board.xml"/>
+   		<mapper resource="mybatis/Board2.xml"/>
+   		<mapper resource="mybatis/Paging.xml"/>
+   		<mapper resource="mybatis/AddressAjax.xml"/>
+   		<mapper resource="mybatis/Slang.xml"/>
+   		<!-- append -->
+   	</mappers>
+</configuration>

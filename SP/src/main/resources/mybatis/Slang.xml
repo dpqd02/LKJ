@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lkj.spring3.model.Slang">
+	<resultMap type="Slang" id="slangResult">
+		<result property="seq" column="SEQ"/>
+		<result property="title" column="TITLE"/>
+		<result property="content" column="CONTENT"/>
+		<result property="writer" column="WRITER"/>
+		<result property="email" column="EMAIL"/>
+		<result property="pwd" column="PWD"/>
+		<result property="f_oname" column="F_ONAME"/>
+		<result property="f_savename" column="F_SAVENAME"/>
+		<result property="f_size" column="F_SIZE"/>
+		<result property="rdate" column="RDATE"/>
+		<result property="rcount" column="RCOUNT"/>
+	</resultMap>
+	
+	<select id="list" resultType="Slang">
+		select * from SLANG_BOARD order by SEQ desc	
+	</select>
+	<select id="content" resultType="Slang" parameterType="long">
+		select * from SLANG_BOARD where SEQ=#{seq}
+	</select>
+	<insert id="insert"  parameterType="Slang">
+		insert into SLANG_BOARD (SEQ,TITLE,CONTENT,WRITER,EMAIL,PWD,RDATE,RCOUNT) 
+		values(SLANG_SEQ.nextval,#{title},#{writer},#{email},#{pwd},SYSDATE,0)
+	</insert>
+	<delete id="delete" parameterType="long">
+	 	delete from SLANG_BOARD where SEQ=#{seq} 
+	</delete>
+</mapper>
