@@ -22,4 +22,8 @@ public class TilesController {
 	public String content() {
 		return "boardContent";
 	}
+	@RequestMapping("love.do")
+	public String love() {
+		return "boardContent";
+	}
 }
